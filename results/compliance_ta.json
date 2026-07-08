@@ -1,0 +1,210 @@
+{
+  "zones": [
+    {
+      "condition": 1,
+      "n_cartridges": 1,
+      "overall_zone": 1,
+      "overall_label": "Compliant",
+      "articles": {
+        "art_9": {
+          "zone": 1,
+          "label": "Compliant",
+          "value": 0.0
+        },
+        "art_14": {
+          "zone": 1,
+          "label": "Compliant",
+          "value": 0.1531
+        },
+        "art_15": {
+          "zone": 1,
+          "label": "Compliant",
+          "value": 0.0
+        }
+      },
+      "remediation": [
+        "System operating within EU AI Act compliance bounds."
+      ]
+    },
+    {
+      "condition": 2,
+      "n_cartridges": 2,
+      "overall_zone": 3,
+      "overall_label": "Non-Compliant",
+      "articles": {
+        "art_9": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.1037
+        },
+        "art_14": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 1.0
+        },
+        "art_15": {
+          "zone": 1,
+          "label": "Compliant",
+          "value": 0.0102
+        }
+      },
+      "remediation": [
+        "Art. 9 \u2014 Implement continuous drift monitoring with \u03b4 logged per inference batch; trigger risk review when \u03b4 exceeds 0.15.",
+        "Art. 14 \u2014 Reduce active cartridge count or increase confidence threshold to restore effective human oversight capacity; consider automatic routing of uncertain predictions."
+      ]
+    },
+    {
+      "condition": 3,
+      "n_cartridges": 3,
+      "overall_zone": 3,
+      "overall_label": "Non-Compliant",
+      "articles": {
+        "art_9": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.1112
+        },
+        "art_14": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 1.0
+        },
+        "art_15": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.1633
+        }
+      },
+      "remediation": [
+        "Art. 9 \u2014 Implement continuous drift monitoring with \u03b4 logged per inference batch; trigger risk review when \u03b4 exceeds 0.15.",
+        "Art. 14 \u2014 Reduce active cartridge count or increase confidence threshold to restore effective human oversight capacity; consider automatic routing of uncertain predictions.",
+        "Art. 15 \u2014 Accuracy degradation exceeds acceptable bounds; re-evaluate cartridge combination or implement domain-gating to restrict cartridge scope."
+      ]
+    },
+    {
+      "condition": 4,
+      "n_cartridges": 4,
+      "overall_zone": 3,
+      "overall_label": "Non-Compliant",
+      "articles": {
+        "art_9": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.1198
+        },
+        "art_14": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 1.0
+        },
+        "art_15": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.398
+        }
+      },
+      "remediation": [
+        "Art. 9 \u2014 Implement continuous drift monitoring with \u03b4 logged per inference batch; trigger risk review when \u03b4 exceeds 0.15.",
+        "Art. 14 \u2014 Reduce active cartridge count or increase confidence threshold to restore effective human oversight capacity; consider automatic routing of uncertain predictions.",
+        "Art. 15 \u2014 Accuracy degradation exceeds acceptable bounds; re-evaluate cartridge combination or implement domain-gating to restrict cartridge scope."
+      ]
+    },
+    {
+      "condition": 5,
+      "n_cartridges": 5,
+      "overall_zone": 3,
+      "overall_label": "Non-Compliant",
+      "articles": {
+        "art_9": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.1232
+        },
+        "art_14": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 1.0
+        },
+        "art_15": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.4796
+        }
+      },
+      "remediation": [
+        "Art. 9 \u2014 Implement continuous drift monitoring with \u03b4 logged per inference batch; trigger risk review when \u03b4 exceeds 0.15.",
+        "Art. 14 \u2014 Reduce active cartridge count or increase confidence threshold to restore effective human oversight capacity; consider automatic routing of uncertain predictions.",
+        "Art. 15 \u2014 Accuracy degradation exceeds acceptable bounds; re-evaluate cartridge combination or implement domain-gating to restrict cartridge scope."
+      ]
+    },
+    {
+      "condition": 6,
+      "n_cartridges": 6,
+      "overall_zone": 3,
+      "overall_label": "Non-Compliant",
+      "articles": {
+        "art_9": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.1243
+        },
+        "art_14": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 1.0
+        },
+        "art_15": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.4898
+        }
+      },
+      "remediation": [
+        "Art. 9 \u2014 Implement continuous drift monitoring with \u03b4 logged per inference batch; trigger risk review when \u03b4 exceeds 0.15.",
+        "Art. 14 \u2014 Reduce active cartridge count or increase confidence threshold to restore effective human oversight capacity; consider automatic routing of uncertain predictions.",
+        "Art. 15 \u2014 Accuracy degradation exceeds acceptable bounds; re-evaluate cartridge combination or implement domain-gating to restrict cartridge scope."
+      ]
+    },
+    {
+      "condition": 7,
+      "n_cartridges": 7,
+      "overall_zone": 3,
+      "overall_label": "Non-Compliant",
+      "articles": {
+        "art_9": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.1246
+        },
+        "art_14": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 1.0
+        },
+        "art_15": {
+          "zone": 3,
+          "label": "Non-Compliant",
+          "value": 0.4898
+        }
+      },
+      "remediation": [
+        "Art. 9 \u2014 Implement continuous drift monitoring with \u03b4 logged per inference batch; trigger risk review when \u03b4 exceeds 0.15.",
+        "Art. 14 \u2014 Reduce active cartridge count or increase confidence threshold to restore effective human oversight capacity; consider automatic routing of uncertain predictions.",
+        "Art. 15 \u2014 Accuracy degradation exceeds acceptable bounds; re-evaluate cartridge combination or implement domain-gating to restrict cartridge scope."
+      ]
+    }
+  ],
+  "empirical_thresholds": {
+    "art9_caution_at_n_cartridges": 2,
+    "art9_noncompliant_at_n_cartridges": 2,
+    "art14_caution_at_n_cartridges": 2,
+    "art14_noncompliant_at_n_cartridges": 2,
+    "art15_caution_at_n_cartridges": 3,
+    "art15_noncompliant_at_n_cartridges": 3,
+    "esys_peak": {
+      "n_cartridges": 1,
+      "e_sys": 0.2212
+    },
+    "note": "Cartridge counts at which each EU AI Act article's threshold is first exceeded. These are the paper's empirically derived compliance boundaries."
+  }
+}

@@ -1,0 +1,135 @@
+[
+  {
+    "condition": 1,
+    "n_cartridges": 1,
+    "cartridge_ids": [
+      1
+    ],
+    "delta": 0.0,
+    "accuracy": 0.7551,
+    "f1_macro": 0.4302,
+    "accuracy_drop": 0.0,
+    "oversight_burden": 0.1531,
+    "mean_entropy": 0.6584,
+    "mean_confidence": 0.6285,
+    "e_sys": 0.2212,
+    "fusion_method": "ta"
+  },
+  {
+    "condition": 2,
+    "n_cartridges": 2,
+    "cartridge_ids": [
+      1,
+      2
+    ],
+    "delta": 0.1037,
+    "accuracy": 0.7449,
+    "f1_macro": 0.4269,
+    "accuracy_drop": 0.0102,
+    "oversight_burden": 1.0,
+    "mean_entropy": 0.6923,
+    "mean_confidence": 0.5177,
+    "e_sys": 0.1224,
+    "fusion_method": "ta"
+  },
+  {
+    "condition": 3,
+    "n_cartridges": 3,
+    "cartridge_ids": [
+      1,
+      2,
+      3
+    ],
+    "delta": 0.1112,
+    "accuracy": 0.5918,
+    "f1_macro": 0.5431,
+    "accuracy_drop": 0.1633,
+    "oversight_burden": 1.0,
+    "mean_entropy": 0.693,
+    "mean_confidence": 0.5067,
+    "e_sys": 0.0459,
+    "fusion_method": "ta"
+  },
+  {
+    "condition": 4,
+    "n_cartridges": 4,
+    "cartridge_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "delta": 0.1198,
+    "accuracy": 0.3571,
+    "f1_macro": 0.3538,
+    "accuracy_drop": 0.398,
+    "oversight_burden": 1.0,
+    "mean_entropy": 0.693,
+    "mean_confidence": 0.5077,
+    "e_sys": 0.0,
+    "fusion_method": "ta"
+  },
+  {
+    "condition": 5,
+    "n_cartridges": 5,
+    "cartridge_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "delta": 0.1232,
+    "accuracy": 0.2755,
+    "f1_macro": 0.2406,
+    "accuracy_drop": 0.4796,
+    "oversight_burden": 1.0,
+    "mean_entropy": 0.6929,
+    "mean_confidence": 0.5104,
+    "e_sys": 0.0,
+    "fusion_method": "ta"
+  },
+  {
+    "condition": 6,
+    "n_cartridges": 6,
+    "cartridge_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "delta": 0.1243,
+    "accuracy": 0.2653,
+    "f1_macro": 0.2263,
+    "accuracy_drop": 0.4898,
+    "oversight_burden": 1.0,
+    "mean_entropy": 0.6928,
+    "mean_confidence": 0.5122,
+    "e_sys": 0.0,
+    "fusion_method": "ta"
+  },
+  {
+    "condition": 7,
+    "n_cartridges": 7,
+    "cartridge_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "delta": 0.1246,
+    "accuracy": 0.2653,
+    "f1_macro": 0.2263,
+    "accuracy_drop": 0.4898,
+    "oversight_burden": 1.0,
+    "mean_entropy": 0.6928,
+    "mean_confidence": 0.5126,
+    "e_sys": 0.0,
+    "fusion_method": "ta"
+  }
+]

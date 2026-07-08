@@ -1,0 +1,70 @@
+{
+  "pearson_delta_accdrop": {
+    "r": 0.6998,
+    "p": 0.080042
+  },
+  "pearson_delta_burden": {
+    "r": 0.985,
+    "p": 5.2e-05
+  },
+  "ols_delta_accdrop": {
+    "slope": 3.4957,
+    "intercept": -0.0629,
+    "r_squared": 0.4897,
+    "p": 0.080042
+  },
+  "spearman_delta_esys": {
+    "rho": -0.9063,
+    "p": 0.004902
+  },
+  "bonferroni_pairwise": [
+    {
+      "condition": 2,
+      "delta_accuracy": 0.0102,
+      "z_stat": 0.204,
+      "p_raw": 0.838354,
+      "p_bonferroni": 1.0,
+      "significant": false
+    },
+    {
+      "condition": 3,
+      "delta_accuracy": 0.1633,
+      "z_stat": 3.0157,
+      "p_raw": 0.002564,
+      "p_bonferroni": 0.015383,
+      "significant": "True"
+    },
+    {
+      "condition": 4,
+      "delta_accuracy": 0.398,
+      "z_stat": 6.9374,
+      "p_raw": 0.0,
+      "p_bonferroni": 0.0,
+      "significant": "True"
+    },
+    {
+      "condition": 5,
+      "delta_accuracy": 0.4796,
+      "z_stat": 8.3108,
+      "p_raw": 0.0,
+      "p_bonferroni": 0.0,
+      "significant": "True"
+    },
+    {
+      "condition": 6,
+      "delta_accuracy": 0.4898,
+      "z_stat": 8.4853,
+      "p_raw": 0.0,
+      "p_bonferroni": 0.0,
+      "significant": "True"
+    },
+    {
+      "condition": 7,
+      "delta_accuracy": 0.4898,
+      "z_stat": 8.4853,
+      "p_raw": 0.0,
+      "p_bonferroni": 0.0,
+      "significant": "True"
+    }
+  ]
+}

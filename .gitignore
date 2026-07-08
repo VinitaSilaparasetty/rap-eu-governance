@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+results/adapters/
+# Keep results figures and JSONs but not the large adapter weights

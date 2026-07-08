@@ -1,0 +1,13 @@
+{
+  "zone1_delta_max": 0.052,
+  "zone2_delta_max": 0.09,
+  "zone1_burden_max": 0.2,
+  "zone2_burden_max": 0.4,
+  "zone1_acc_drop_max": 0.05,
+  "zone2_acc_drop_max": 0.15,
+  "derived_from_n_conditions": 4,
+  "pilot_delta_range": [
+    0.0,
+    0.1198
+  ]
+}
