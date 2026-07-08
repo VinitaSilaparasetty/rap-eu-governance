@@ -249,7 +249,7 @@ def plot_correlation(conditions: List[Dict], stats_results: Dict, cfg: Experimen
     ax.set_ylabel("Accuracy Drop")
     ax.set_title("Figure 5 — Activation Drift vs Accuracy Drop\n"
                  "(RQ2: δ as Art. 9 risk predictor)")
-    ax.legend(fontsize=8, loc="lower right")
+    ax.legend(fontsize=8, loc="upper left")
     fig.tight_layout()
     _save(fig, "fig5_delta_accuracy_correlation", cfg.results_dir)
 
