@@ -1,3 +1,5 @@
+<div align="center">
+
 # Activation Drift as a Leading Compliance Indicator for Modular AI Under the EU AI Act
 
 **Vinita Silaparasetty**  
@@ -5,6 +7,8 @@ Aevoxis Solutions, Berlin, Germany
 info@aevoxis.de
 
 **First experiment: February 2026 | Preprint: July 2026**
+
+</div>
 
 ---
 
