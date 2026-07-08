@@ -35,7 +35,7 @@ def plot_drift_curve(conditions: List[Dict], zones: List[Dict], cfg: ExperimentC
     deltas = [c["delta"] for c in conditions]
     zone_colors = [ZONE_COLORS[z["overall_zone"]] for z in zones]
 
-    fig, ax = plt.subplots(figsize=(7, 4.5))
+    fig, ax = plt.subplots(figsize=(5.5, 3.5))
 
     # Shade compliance zones
     ax.axhspan(0, cfg.zone1_delta_max, alpha=0.08, color=ZONE_COLORS[1])
@@ -113,7 +113,7 @@ def plot_oversight_and_esys(conditions: List[Dict], zones: List[Dict], cfg: Expe
     burden = [c["oversight_burden"] for c in conditions]
     esys = [c["e_sys"] for c in conditions]
 
-    fig, ax1 = plt.subplots(figsize=(8, 4.5))
+    fig, ax1 = plt.subplots(figsize=(6.5, 3.5))
     ax2 = ax1.twinx()
 
     # Shade Art. 14 zones on left axis
@@ -165,7 +165,7 @@ def plot_compliance_heatmap(conditions: List[Dict], zones: List[Dict], cfg: Expe
     ns = [c["n_cartridges"] for c in conditions]
     zone_nums = [z["overall_zone"] for z in zones]
 
-    fig, ax = plt.subplots(figsize=(7, 5.5))
+    fig, ax = plt.subplots(figsize=(5.5, 4.5))
 
     # Background grid
     d_range = np.linspace(0, max(deltas) * 1.2, 200)
@@ -225,7 +225,7 @@ def plot_correlation(conditions: List[Dict], stats_results: Dict, cfg: Experimen
     deltas = np.array([c["delta"] for c in conditions])
     acc_drops = np.array([c["accuracy_drop"] for c in conditions])
 
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(5, 4))
 
     ax.scatter(deltas, acc_drops, s=100, zorder=5, edgecolors="black",
                color="#3498db", linewidths=0.8, label="Conditions")
