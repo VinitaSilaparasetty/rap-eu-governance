@@ -18,7 +18,7 @@ The central finding is that δ crosses the Art. 9 caution boundary at n=2 under 
 
 The two fusion methods diverge on Art. 15 accuracy: Task Arithmetic shows severe accuracy collapse at n=3 (75.5% → 59.2%), while TIES-Merging maintains accuracy above the single-cartridge baseline through n=3 before declining. Both methods collapse confidence-based oversight burden (B(n)) to 1.0 at n=2 — suggesting this is a property of classification-head miscalibration under any fusion, not of sign conflicts specifically. δ is robust across both methods; B(n) is not a reliable differentiator between them in this experiment.
 
-Threshold derivation follows a pre-specified pilot/validation protocol to avoid circularity. All code, data, and trained adapters are publicly available.
+Threshold derivation follows a pre-specified pilot/validation protocol to avoid circularity. All code, data, and trained adapters are publicly available at https://github.com/VinitaSilaparasetty/rap-eu-governance.
 
 ---
 
@@ -390,5 +390,5 @@ Yu, L. et al. (2024). Language Models are Super Mario: Absorbing Abilities from 
 
 All experiments were conducted with seed = 42. Full reproducibility is documented in the project README.
 
-*Repository*: github.com/VinitaSilaparasetty/rap-eu-governance  
+*Repository*: https://github.com/VinitaSilaparasetty/rap-eu-governance  
 *Framework*: Python 3.12, PyTorch 2.2.2, transformers 4.44.2, PEFT 0.10.0
