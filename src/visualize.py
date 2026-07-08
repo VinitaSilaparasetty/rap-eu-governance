@@ -150,7 +150,7 @@ def plot_oversight_and_esys(conditions: List[Dict], zones: List[Dict], cfg: Expe
 
     lines = [l1, l2]
     labels = [l.get_label() for l in lines]
-    ax1.legend(lines, labels, loc="lower right", fontsize=9)
+    ax1.legend(lines, labels, loc="center", bbox_to_anchor=(0.72, 0.27), fontsize=9)
 
     ax1.set_title("Figure 3 — Human Oversight Burden and System Efficacy\n"
                   "EU AI Act Article 14 Compliance Boundary")
