@@ -227,8 +227,12 @@ def plot_correlation(conditions: List[Dict], stats_results: Dict, cfg: Experimen
 
     fig, ax = plt.subplots(figsize=(4.5, 3.5))
 
+    pearson_r = stats_results.get("pearson_delta_accdrop", {}).get("r", np.nan)
+    pearson_p = stats_results.get("pearson_delta_accdrop", {}).get("p", np.nan)
+
     ax.scatter(deltas, acc_drops, s=100, zorder=5, edgecolors="black",
-               color="#3498db", linewidths=0.8, label="Conditions")
+               color="#3498db", linewidths=0.8,
+               label=f"Conditions (r={pearson_r:.3f}, p={pearson_p:.4f})")
 
     ols = stats_results.get("ols_delta_accdrop", {})
     slope = ols.get("slope", np.nan)
@@ -239,20 +243,13 @@ def plot_correlation(conditions: List[Dict], stats_results: Dict, cfg: Experimen
     if not np.isnan(slope):
         x_fit = np.linspace(deltas.min(), deltas.max(), 100)
         ax.plot(x_fit, slope * x_fit + intercept, "r--", linewidth=1.5,
-                label=f"OLS fit (R²={r2:.2f}, p={p_ols:.4f})")
-
-    pearson_r = stats_results.get("pearson_delta_accdrop", {}).get("r", np.nan)
-    pearson_p = stats_results.get("pearson_delta_accdrop", {}).get("p", np.nan)
-    ax.text(0.05, 0.92,
-            f"Pearson r = {pearson_r:.3f}, p = {pearson_p:.4f}",
-            transform=ax.transAxes, fontsize=9,
-            bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.8))
+                label=f"OLS fit (R²={r2:.2f})")
 
     ax.set_xlabel("Manifold Drift δ")
-    ax.set_ylabel("Accuracy Drop (vs Condition 1 baseline)")
-    ax.set_title("Figure 5 — Correlation: Activation Drift → Accuracy Degradation\n"
+    ax.set_ylabel("Accuracy Drop")
+    ax.set_title("Figure 5 — Activation Drift vs Accuracy Drop\n"
                  "(RQ2: δ as Art. 9 risk predictor)")
-    ax.legend(fontsize=9)
+    ax.legend(fontsize=8, loc="lower right")
     fig.tight_layout()
     _save(fig, "fig5_delta_accuracy_correlation", cfg.results_dir)
 
