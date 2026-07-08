@@ -187,13 +187,27 @@ def plot_compliance_heatmap(conditions: List[Dict], zones: List[Dict], cfg: Expe
         s=120, zorder=5, edgecolors="black", linewidths=0.8,
         vmin=1, vmax=3)
 
-    for d, b, n in zip(deltas, burdens, ns):
-        ax.annotate(f"n={n}", (d, b), textcoords="offset points", xytext=(6, 4), fontsize=8)
+    # Staggered offsets so labels don't collide — n=2–7 all sit at B=1.0
+    # with very similar δ, so alternate left/right and step down in y.
+    label_offsets = [
+        (6,   4),   # n=1: isolated, right/above
+        (6,  18),   # n=2: right, high above
+        (-46,  8),  # n=3: left, lower above (vertical stagger clears n=2)
+        (6,  -14),  # n=4: right, below
+        (-46, -14), # n=5: left, below
+        (6,  -26),  # n=6: right, further below
+        (-46, -26), # n=7: left, further below
+    ]
+    for (d, b, n), (ox, oy) in zip(zip(deltas, burdens, ns), label_offsets):
+        ax.annotate(f"n={n}", (d, b), textcoords="offset points", xytext=(ox, oy), fontsize=8)
 
     ax.axvline(cfg.zone1_delta_max, color="grey", linestyle="--", linewidth=1.0, alpha=0.7)
     ax.axvline(cfg.zone2_delta_max, color="grey", linestyle="--", linewidth=1.0, alpha=0.7)
     ax.axhline(cfg.zone1_burden_max, color="grey", linestyle="--", linewidth=1.0, alpha=0.7)
     ax.axhline(cfg.zone2_burden_max, color="grey", linestyle="--", linewidth=1.0, alpha=0.7)
+
+    # Add left margin so the n=1 dot at δ=0 isn't clipped by the axis edge
+    ax.set_xlim(-0.005, max(deltas) * 1.2)
 
     ax.set_xlabel("Manifold Drift δ  (Art. 9 metric)")
     ax.set_ylabel("Oversight Burden B(n)  (Art. 14 metric)")
