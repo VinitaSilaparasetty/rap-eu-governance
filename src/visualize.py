@@ -136,13 +136,13 @@ def plot_oversight_and_esys(conditions: List[Dict], zones: List[Dict], cfg: Expe
     ax2.set_ylabel("System Efficacy E_sys", color="blue")
     ax2.tick_params(axis="y", labelcolor="blue")
 
-    # Peak E_sys annotation
+    # Peak E_sys annotation — place text below-right of peak to avoid title collision
     if esys:
         peak_idx = int(np.argmax(esys))
         ax2.annotate(
             f"E_sys peak\nn={ns[peak_idx]}",
             xy=(ns[peak_idx], esys[peak_idx]),
-            xytext=(ns[peak_idx] + 0.3, esys[peak_idx] + 0.02),
+            xytext=(ns[peak_idx] + 1.2, esys[peak_idx] * 0.55),
             fontsize=9,
             arrowprops=dict(arrowstyle="->", color="blue"),
             color="blue",
@@ -150,7 +150,7 @@ def plot_oversight_and_esys(conditions: List[Dict], zones: List[Dict], cfg: Expe
 
     lines = [l1, l2]
     labels = [l.get_label() for l in lines]
-    ax1.legend(lines, labels, loc="upper left", fontsize=9)
+    ax1.legend(lines, labels, loc="lower right", fontsize=9)
 
     ax1.set_title("Figure 3 — Human Oversight Burden and System Efficacy\n"
                   "EU AI Act Article 14 Compliance Boundary")
