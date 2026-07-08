@@ -142,7 +142,7 @@ def plot_oversight_and_esys(conditions: List[Dict], zones: List[Dict], cfg: Expe
         ax2.annotate(
             f"E_sys peak\nn={ns[peak_idx]}",
             xy=(ns[peak_idx], esys[peak_idx]),
-            xytext=(ns[peak_idx] + 1.2, esys[peak_idx] * 0.55),
+            xytext=(ns[peak_idx] + 1.2, esys[peak_idx] * 0.25),
             fontsize=9,
             arrowprops=dict(arrowstyle="->", color="blue"),
             color="blue",
