@@ -360,6 +360,12 @@ These results are offered as a proof-of-concept and research template. Proposed 
 
 ---
 
+## Acknowledgments
+
+The author thanks Al Kari for the RAP and CAST architecture work that directly motivated this study, and the Google Developer Experts peer review group for early engagement with related work in this space.
+
+---
+
 ## AI Use Disclosure
 
 The research questions, experimental design, metric formulations (δ, B(n), E_sys), EU AI Act compliance framework, leading-indicator thesis, and all substantive intellectual contributions in this paper are entirely the author's own. Claude (Anthropic), a large language model AI assistant, was used to assist with manuscript formatting, Python implementation of the experimental pipeline, and editing of written passages for clarity. The AI did not generate the research ideas, select the datasets, define the governance metrics, interpret the results, or determine the conclusions. All such decisions were made independently by the author. This disclosure is made in accordance with emerging norms for transparent AI-assisted academic writing.
