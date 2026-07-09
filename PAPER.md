@@ -203,7 +203,7 @@ These thresholds are applied without adjustment to all subsequent analyses.
 
 **Figure 1** — Manifold Drift (δ) vs cartridge count with pilot-derived thresholds.
 
-<img src="results/fig1_drift_curve.png" width="500">
+<div align="center"><img src="results/fig1_drift_curve.png" width="500"></div>
 
 **Figure 2** — Accuracy degradation with Art. 15 thresholds.
 
@@ -211,11 +211,11 @@ These thresholds are applied without adjustment to all subsequent analyses.
 
 **Figure 3** — B(n) (Art. 14) and E_sys on a dual-axis plot.
 
-<img src="results/fig3_oversight_esys.png" width="500">
+<div align="center"><img src="results/fig3_oversight_esys.png" width="500"></div>
 
 **Figure 4** — Compliance zone map (δ × B(n)).
 
-<img src="results/fig4_compliance_heatmap.png" width="500">
+<div align="center"><img src="results/fig4_compliance_heatmap.png" width="500"></div>
 
 ### 4.3 TIES-Merging — Full Results (n=1–7)
 
@@ -274,7 +274,7 @@ These thresholds are applied without adjustment to all subsequent analyses.
 
 **Figure 5** — δ vs accuracy drop correlation with OLS fit.
 
-<img src="results/fig5_delta_accuracy_correlation.png" width="500">
+<div align="center"><img src="results/fig5_delta_accuracy_correlation.png" width="500"></div>
 
 ---
 
