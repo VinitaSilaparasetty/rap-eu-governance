@@ -72,7 +72,7 @@ Governance frameworks for monolithic AI are well-developed (Jobin et al., 2019; 
 
 ### 3.1 Experimental Design
 
-This study simulates the RAP/CAST cartridge fusion scenario using roberta-base (Liu et al., 2019) as the base model and the PEFT library (Mangrulkar et al., 2022) for LoRA fine-tuning. Seven independent domain-specific cartridges were trained on publicly available Annex III-relevant datasets, then progressively fused under two fusion strategies, evaluating each condition on the primary task (Cartridge 1: `corporate_lobbying`).
+This study instantiates the RAP/CAST cartridge composition pattern using roberta-base (Liu et al., 2019) as the base model and the PEFT library (Mangrulkar et al., 2022) for LoRA fine-tuning. Task Arithmetic and TIES-Merging are used as tractable, publicly specified approximations of the fusion mechanism; the RAP/CAST architecture as described in Kari (2025) may employ different or more sophisticated fusion strategies, and governance findings here are conditional on the fusion mechanisms studied rather than constituting a direct evaluation of any specific RAP/CAST implementation. Seven independent domain-specific cartridges were trained on publicly available Annex III-relevant datasets, then progressively fused under both strategies, evaluating each condition on the primary task (Cartridge 1: `corporate_lobbying`).
 
 **Seven experimental conditions** are defined by the number of cartridges fused (n = 1 to 7). For each condition, the following metrics are evaluated:
 - Manifold Drift (δ) relative to the Condition 1 baseline
