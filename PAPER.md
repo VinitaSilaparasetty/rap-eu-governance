@@ -47,11 +47,13 @@ This paper makes four contributions:
 
 ### 2.1 Retrieval-Augmented Parameterisation and CAST
 
-RAP (Kari, 2025) augments a base language model with domain-specific LoRA adapters at inference time. The CAST framework extends RAP to cross-architecture portability. Both RAP and CAST are described primarily in preprint form; governance claims here are conditional on the architecture as specified and may require revision as the work matures. The fusion mechanism studied is **Task Arithmetic** (Ilharco et al., 2022):
+RAP (Kari, 2025) augments a base language model with domain-specific LoRA adapters at inference time. The CAST framework extends RAP to cross-architecture portability. Both are described primarily in preprint form; governance claims here are conditional on the architecture as specified and may require revision as the work matures.
+
+The defining structural property of RAP/CAST relevant to this study is **cartridge composition**: multiple domain-specific LoRA adapters are combined at inference time to produce a single fused encoder. This study examines the governance implications of that composition pattern using **Task Arithmetic** (Ilharco et al., 2022) as the mathematically simplest instance:
 
     W_merged = W₀ + λ · (τ₁ + τ₂ + … + τₙ)
 
-where τᵢ = Wᵢ − W₀ are task vectors. In the LoRA setting τᵢ = BᵢAᵢ, making Task Arithmetic equivalent to averaging the adapter weight matrices. This paper also studies **TIES-Merging** (Yadav et al., 2023), which resolves sign conflicts before averaging.
+where τᵢ = Wᵢ − W₀ are task vectors. In the LoRA setting τᵢ = BᵢAᵢ, making Task Arithmetic equivalent to averaging the adapter weight matrices. **TIES-Merging** (Yadav et al., 2023) is studied as a second instance of the same pattern with sign-conflict resolution. The specific fusion implementation used in RAP/CAST production deployments may differ; findings here apply to the cartridge composition pattern as a class, with TA and TIES-Merging as two concrete realisations of it.
 
 ### 2.2 EU AI Act Compliance Requirements for High-Risk AI
 
@@ -335,6 +337,8 @@ The practical upshot for operators: neither fusion method offers an Art. 14 adva
 **Weak primary-task baseline.** roberta-base achieves F1-macro of 0.43 on `corporate_lobbying` at n=1 (accuracy = 0.7551, but the positive class rate in evaluation is 38%, causing a gap between accuracy and macro F1). The model predicts the majority class well but has limited recall on positive cases. Degradation measured from a weak baseline has limited practical interpretability. Future work should use tasks where the baseline cartridge is genuinely competent.
 
 **No Zone 2 observations under either fusion method.** Both the TA and TIES-Merging compliance tables show only Zone 1 (n=1) and Zone 3 (n≥2) for overall compliance — no Zone 2 intermediate was observed. The Zone 2 boundary was derived from pilot data but never empirically traversed. This could mean Zone 2 is a valid operating region that lies between the tested cartridge counts, or that the cliff-like transition from Zone 1 to Zone 3 reflects a genuine property of LoRA fusion at this parameter scale. Finer-grained conditions (e.g., n=1.5 via partial fusion coefficients) could test this.
+
+**Classification-head architecture assumption.** The B(n)=1.0 collapse finding is specific to the single fixed classification head design used here — a single Linear(768, 2) layer trained on the primary task alone and shared across all fusion conditions. This design means any adapter fusion that shifts encoder representations will immediately push the head out of distribution. RAP/CAST deployments using alternative head architectures — shared heads trained on mixed tasks, per-cartridge task-specific heads, routing layers that select the appropriate head at inference time, or learned head ensembles — may exhibit substantially different B(n) behaviour under fusion. The confidence-collapse finding should be understood as a property of the single-head instantiation used here, not a claim about the RAP/CAST cartridge composition pattern in general.
 
 **Statistical power.** Seven conditions is sufficient for descriptive exploration. The Pearson p values should be interpreted as descriptive estimates, not confirmatory tests.
 
