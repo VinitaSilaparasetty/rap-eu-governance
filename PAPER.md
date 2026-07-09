@@ -92,6 +92,8 @@ All datasets were sourced from HuggingFace and are publicly available. All tasks
 
 **Table 1 — Cartridge Registry**
 
+<div align="center">
+
 | N | Name | Dataset | Domain | EU AI Act Annex |
 |---|------|---------|--------|-----------------|
 | 1 | corporate_lobbying | LegalBench (Guha et al., 2023) | Legal | III-5b |
@@ -101,6 +103,8 @@ All datasets were sourced from HuggingFace and are publicly available. All tasks
 | 5 | telemarketing_sales_rule | LegalBench | Regulatory | III-5b |
 | 6 | financial_phrasebank | FinancialPhraseBank (Malo et al., 2014) | Financial | III-2 |
 | 7 | eurlex | LexGLUE/EURLEX (Chalkidis et al., 2022) | EU Legislation | Annex III (all) |
+
+</div>
 
 All datasets were balanced to 50% positive/negative by stratified sampling (max 400 training, 150 evaluation per cartridge). Binary labels were constructed from original multi-class formats as described in Appendix A.
 
@@ -152,11 +156,15 @@ To avoid the circularity of deriving thresholds and validating them on the same 
 
 **Table 2 — Compliance Zone Framework**
 
+<div align="center">
+
 | Zone | Label | δ (Art. 9) | Accuracy Drop (Art. 15) | B(n) (Art. 14) |
 |------|-------|-----------|------------------------|----------------|
 | 1 | Compliant | ≤ 0.052 | ≤ 5% | ≤ 20% |
 | 2 | Caution | 0.052–0.090 | 5–15% | 20–40% |
 | 3 | Non-Compliant | > 0.090 | > 15% | > 40% |
+
+</div>
 
 *δ boundaries (0.052 and 0.090) were derived from the TA pilot conditions (n=1–4) and are described in Section 3.5 and 4.1. B(n) and acc_drop boundaries were set a priori (Section 3.5).*
 
@@ -168,12 +176,16 @@ To avoid the circularity of deriving thresholds and validating them on the same 
 
 **Table 3 — Pilot Conditions (Task Arithmetic, n=1–4)**
 
+<div align="center">
+
 | n | δ | Accuracy | Acc. Drop | B(n) | E_sys |
 |---|---|----------|-----------|------|-------|
 | 1 | 0.0000 | 0.7551 | 0.0000 | 0.1531 | 0.2212 |
 | 2 | 0.1037 | 0.7449 | 0.0102 | 1.0000 | 0.1224 |
 | 3 | 0.1112 | 0.5918 | 0.1633 | 1.0000 | 0.0459 |
 | 4 | 0.1198 | 0.3571 | 0.3980 | 1.0000 | 0.0000 |
+
+</div>
 
 From these pilot conditions, the following δ thresholds are derived:
 - **Zone 1/2 boundary**: δ = 0.052 (midpoint between n=1 and n=2 values)
@@ -185,6 +197,8 @@ These thresholds are applied without adjustment to all subsequent analyses.
 
 **Table 4 — Task Arithmetic Conditions, All Compliance Zones**
 
+<div align="center">
+
 | n | δ | Accuracy | Acc. Drop | B(n) | E_sys | Zone |
 |---|---|----------|-----------|------|-------|------|
 | 1 | 0.0000 | 0.7551 | 0.0000 | 0.1531 | 0.2212 | Zone 1 |
@@ -194,6 +208,8 @@ These thresholds are applied without adjustment to all subsequent analyses.
 | 5 | 0.1232 | 0.2755 | 0.4796 | 1.0000 | 0.0000 | Zone 3 |
 | 6 | 0.1243 | 0.2653 | 0.4898 | 1.0000 | 0.0000 | Zone 3 |
 | 7 | 0.1246 | 0.2653 | 0.4898 | 1.0000 | 0.0000 | Zone 3 |
+
+</div>
 
 *Validation conditions (n=5–7) are shaded; thresholds were not adjusted after seeing them.*
 
@@ -221,6 +237,8 @@ These thresholds are applied without adjustment to all subsequent analyses.
 
 **Table 5 — TIES-Merging Conditions (same pilot-derived thresholds applied)**
 
+<div align="center">
+
 | n | δ | Accuracy | Acc. Drop | B(n) | E_sys | Zone |
 |---|---|----------|-----------|------|-------|------|
 | 1 | 0.0000 | 0.7551 | 0.0000 | 0.1531 | 0.2212 | Zone 1 |
@@ -230,6 +248,8 @@ These thresholds are applied without adjustment to all subsequent analyses.
 | 5 | 0.1141 | 0.5408 | 0.2143 | 1.0000 | 0.0204 | Zone 3 |
 | 6 | 0.1153 | 0.4184 | 0.3367 | 1.0000 | 0.0000 | Zone 3 |
 | 7 | 0.1133 | 0.4184 | 0.3367 | 1.0000 | 0.0000 | Zone 3 |
+
+</div>
 
 **Figure 6** — Method comparison: δ, B(n), and accuracy under both fusion strategies.
 
@@ -261,6 +281,8 @@ These thresholds are applied without adjustment to all subsequent analyses.
 
 **Table 6 — Proposed Compliance Breakpoints (Pilot-Derived, TA-Validated)**
 
+<div align="center">
+
 | EU AI Act Article | Proposed Threshold | First Exceeded (TA) | First Exceeded (TIES) |
 |---|---|---|---|
 | Art. 9 — Risk Management (Caution) | δ > 0.052 | n = 2 | n = 2 |
@@ -269,6 +291,8 @@ These thresholds are applied without adjustment to all subsequent analyses.
 | Art. 14 — Human Oversight (Non-Compliant) | B(n) > 0.40 | n = 2 | n = 2 |
 | Art. 15 — Accuracy (Caution) | Drop > 5 pp | n = 3 | n = 4 |
 | Art. 15 — Accuracy (Non-Compliant) | Drop > 15 pp | n = 3 | n = 5 |
+
+</div>
 
 *δ thresholds derived from pilot (TA n=1–4); applied without adjustment to validation and TIES conditions. B(n) and acc_drop thresholds are a priori operational choices, not data-derived.*
 
@@ -378,6 +402,8 @@ Yu, L. et al. (2024). Language Models are Super Mario: Absorbing Abilities from 
 
 ## Appendix A — Dataset Binarisation
 
+<div align="center">
+
 | Cartridge | Original Labels | Binary Rule |
 |---|---|---|
 | corporate_lobbying | Yes / No | Yes → 1 |
@@ -387,6 +413,8 @@ Yu, L. et al. (2024). Language Models are Super Mario: Absorbing Abilities from 
 | telemarketing_sales_rule | Yes / No | Yes → 1 |
 | financial_phrasebank | 0=neg, 1=neutral, 2=pos | label==2 → 1 |
 | eurlex | Multilabel EUROVOC list | EUROVOC concept 28 present → 1 |
+
+</div>
 
 ---
 
